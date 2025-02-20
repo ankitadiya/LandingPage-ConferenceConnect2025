@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ConferenceConnect LandingPage</title>
+    <link rel="icon" type="image/a-icon" href="website.png">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="hero">
+        <h1>Welcome to ConferenceConnect 2025 🚀</h1>
+        <p>Join top leaders and innovators for an exclusive event.</p>
+        <p><strong>Date:</strong> April 25, 2025 | <strong>Location:</strong>Sammilani College,Bankura</p>
+
+        <button class="register-btn" onclick="document.getElementById('register').scrollIntoView({behavior: 'smooth'})">
+            Register Now
+        </button>
+    </div>
+
+    <section class="speakers">
+        <h2>🎤 Meet Our Special Speakers</h2>
+        <div class="speaker-list">
+            <div class="speaker">
+                <img src="speaker1.jpg" alt="Speaker 1">
+                <h3>Tapas Kumar Ghosh</h3>
+                <p>HOD</p>
+            </div>
+            <div class="speaker">
+                <img src="speaker2.png" alt="Speaker 2">
+                <h3>Sanjay Sen</h3>
+                <p>Assistant Professor</p>
+            </div>
+            <div class="speaker">
+                <img src="speaker3.png" alt="Speaker 3">
+                <h3>Tanushree Dey</h3>
+                <p>Assistant Professor</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="register" class="registration">
+        <h2>📅 Reserve Your Spot</h2>
+        <p>Secure your place at the event before it's too late.</p>
+
+        <form class="register-form">
+            <input type="text" placeholder="Full Name" required>
+            <input type="email" placeholder="Email Address" required>
+            <button type="submit">Register Now</button>
+        </form>
+    </section>
+
+    <script>
+        function countdownTimer() {
+            const eventDate = new Date("April 25, 2025 00:00:00").getTime();
+
+            setInterval(function () {
+                const now = new Date().getTime();
+                const timeLeft = eventDate - now;
+
+                const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+                document.getElementById("days").innerText = days < 10 ? "0" + days : days;
+                document.getElementById("hours").innerText = hours < 10 ? "0" + hours : hours;
+                document.getElementById("minutes").innerText = minutes < 10 ? "0" + minutes : minutes;
+                document.getElementById("seconds").innerText = seconds < 10 ? "0" + seconds : seconds;
+            }, 1000);
+        }
+        countdownTimer();
+    </script>
+
+
+<footer>
+    <div class="text">
+      <span>Created By Ankita Kundu | 2025 All Rights Reserved</span>
+    </div>
+  </footer>
+
+</body>
+</html>
